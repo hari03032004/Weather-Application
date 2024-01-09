@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/style/main.css">
+  <script>
+    
+  </script>
+    
+</head>
+<body>
+  <div class="outer-container">
+    <div class="card">
+      <form class="search" method="get" action="/search">
+        <img src="/images/search.png" alt="search bar" width="15px" height="15px" class="btn">
+        <input type="text" name="search" id="search" placeholder="Search">    
+      </form>
+      <div class="image">
+        <div class="location"><img src="/images/location.png" alt="location symbol" width="15px" height="15px">
+          <h1><%= content.name %> ,<%= content.sys.country %></h1></div>
+        <img src="/images/2682849_cloud_cloudy_day_forecast_sun_icon.png" alt="image" width="130px" height="130px">
+      </div>
+      <div></div>
+      <div class="rhs">
+        <h1>Pressure </h1><h1 class="value"><%= content.main.pressure %> hPa</h1>
+      </div>
+      <div class="rhs">
+        <h1>Humidity</h1><h1 class="value"><%= content.main.humidity %>%</h1> 
+      </div>
+      <div class="temperature">
+        <h1><%= parseFloat(content.main.temp).toFixed(0) %></h1>
+        <img src="/images/110841_celsius_icon.png" alt="" width="50px" height="55px">
+      </div>
+      <div class="rhs">
+        <h1>Wind speed</h1><h1 class="value"><%= content.wind.speed %> m/s</h1></div>
+      <div class="main">
+        <h1 class="main-name"><%= content.weather[0].main %></h1>
+      </div>
+      <div class="day"><h1><%= days.slice(0,3); %> <%= date %></h1></div>
+    </div>
+  </div>
+</body>
+</html>
